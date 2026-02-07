@@ -1,59 +1,106 @@
-# InterrapidisimoMatriculas
+# Interrapidísimo – Matrícula de Estudiantes (Frontend)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+Este proyecto corresponde al **Frontend de una prueba técnica** desarrollada para la empresa **Interrapidísimo**.
 
-## Development server
+La aplicación permite a estudiantes **autenticarse**, **consultar materias disponibles**, **matricularse**, **cancelar inscripciones** y **visualizar sus materias inscritas**, cumpliendo con reglas de negocio definidas desde el backend.
 
-To start a local development server, run:
+---
 
+## Descripción General
+
+El sistema simula un módulo académico donde un estudiante autenticado puede:
+
+- Iniciar sesión mediante credenciales
+- Visualizar el listado de materias disponibles
+- Matricular materias
+- Cancelar inscripciones
+- Consultar sus materias inscritas
+- Ver los compañeros inscritos en cada materia
+- Recibir notificaciones visuales (toasts) de éxito o error
+- Ser redirigido automáticamente al login cuando la sesión expira
+
+La aplicación está construida como una **Single Page Application (SPA)** usando **Angular moderno (standalone components)**.
+
+---
+
+## Aplicación desplegada
+
+El frontend se encuentra desplegado en una **VPS Linux** y puede ser accedido desde la siguiente URL:
+
+ **https://matriculaestudiantes.joelflow.com/login**
+
+---
+
+## Tecnologías utilizadas
+
+- **Angular 17**
+- Standalone Components
+- TypeScript
+- Angular Router
+- HttpClient
+- Http Interceptors
+- Signals (para estado reactivo)
+- CSS puro (sin frameworks externos)
+- Nginx (para despliegue en VPS)
+
+---
+
+## Autenticación y Seguridad
+
+- Autenticación basada en **JWT**
+- El token se almacena en `localStorage`
+- Uso de **HttpInterceptor** para:
+  - Adjuntar el token en cada petición
+  - Detectar respuestas `401 Unauthorized`
+  - Limpiar sesión y redirigir automáticamente al login
+- Rutas protegidas mediante **Auth Guard**
+
+---
+
+## Funcionalidades principales
+
+### Login
+- Autenticación del estudiante
+- Manejo de errores de credenciales
+- Redirección automática al módulo principal
+
+### Matricular materias
+- Listado de todas las materias
+- Identificación visual de materias ya matriculadas
+- Confirmación antes de matricular o cancelar
+- Validación de reglas de negocio desde el backend
+- Notificaciones visuales de éxito o error
+
+### Mis materias
+- Listado de materias matriculadas por el estudiante
+- Visualización de compañeros inscritos
+- Cancelación de inscripción con confirmación
+- Actualización automática del estado
+
+### Notificaciones (Toasts)
+- Mensajes no intrusivos en la esquina inferior derecha
+- Diferenciación visual entre éxito y error
+- Desaparición automática
+- Implementadas con **Signals** para compatibilidad con Angular zoneless
+
+---
+
+## Decisiones técnicas destacadas
+
+- Uso de **HttpInterceptorFn** en lugar de interceptores basados en clases
+- Manejo centralizado de errores `401 Unauthorized`
+- Uso de **Signals** para estado reactivo y evitar problemas de change detection
+- Arquitectura modular y clara
+- Sin dependencias externas para UI (CSS puro)
+
+---
+
+## Ejecución en entorno local
+
+### Requisitos
+- Node.js 18+
+- Angular CLI
+
+### Instalación
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npm install

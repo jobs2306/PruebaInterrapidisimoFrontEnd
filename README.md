@@ -101,6 +101,7 @@ El frontend se encuentra desplegado en una **VPS Linux** y puede ser accedido de
 - Node.js 18+
 - Angular CLI
 
-### Instalación
+### Ejecución
+Aunque el proyecto se encuentre desplegado, se puede ejecutar localmente mediante:
 ```bash
-npm install
+ng serve

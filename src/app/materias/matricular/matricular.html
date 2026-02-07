@@ -1,0 +1,35 @@
+<app-navbar />
+
+<div class="content">
+  <h2>Matricular materias</h2>
+
+  <p *ngIf="cargando">Cargando materias...</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="grid" *ngIf="!cargando">
+    <div
+      class="card materia"
+      *ngFor="let m of materias"
+      [class.matriculada]="m.matriculada">
+
+      <h3>{{ m.nombre }}</h3>
+      <p>Profesor: {{ m.profesor }}</p>
+
+      <div class="acciones">
+        <button
+          class="btn-primary"
+          (click)="confirmarMatricular(m)"
+          [disabled]="m.matriculada">
+          Matricular
+        </button>
+
+        <button
+          class="btn-danger"
+          (click)="confirmarCancelar(m)"
+          [disabled]="!m.matriculada">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

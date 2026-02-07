@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #FF6A00;
+  --dark: #1C1C1C;
+  --gray: #5F5F5F;
+  --background: #F5F5F5;
+  --success: #2ECC71;
+  --danger: #E74C3C;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--dark);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+body {
+  margin: 0;
+}
+
+.content {
+  padding-top: 24px;
+}

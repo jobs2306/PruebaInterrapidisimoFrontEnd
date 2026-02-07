@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToastComponent } from './core/toast/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [RouterOutlet, ToastComponent],
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('interrapidisimo-matriculas');
-}
+export class AppComponent {}

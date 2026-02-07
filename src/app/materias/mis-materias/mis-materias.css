@@ -1,0 +1,30 @@
+.content {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.materia {
+  border-left: 6px solid var(--primary);
+}
+
+.companeros {
+  margin: 10px 0;
+}
+
+.companeros ul {
+  padding-left: 18px;
+}
+
+.muted {
+  color: var(--gray);
+  font-size: 0.9em;
+}
+
+.error {
+  color: var(--danger);
+}

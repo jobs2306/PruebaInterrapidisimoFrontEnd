@@ -1,0 +1,41 @@
+<app-navbar />
+
+<div class="content">
+  <h2>Mis materias</h2>
+
+  <p *ngIf="cargando">Cargando materias...</p>
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="grid" *ngIf="!cargando && materias.length > 0">
+
+    <div class="card materia" *ngFor="let m of materias">
+      <h3>{{ m.nombre }}</h3>
+      <p>Profesor: {{ m.profesor }}</p>
+
+      <div class="companeros">
+        <strong>Compañeros:</strong>
+
+        <ul *ngIf="m.companeros?.length > 0; else sinCompaneros">
+          <li *ngFor="let c of m.companeros">
+            {{ c }}
+          </li>
+        </ul>
+
+        <ng-template #sinCompaneros>
+          <p class="muted">Sin compañeros aún</p>
+        </ng-template>
+      </div>
+
+      <button
+        class="btn-danger"
+        (click)="confirmarCancelar(m)">
+        Cancelar inscripción
+      </button>
+    </div>
+
+  </div>
+
+  <p *ngIf="!cargando && materias.length === 0">
+    No tienes materias matriculadas.
+  </p>
+</div>

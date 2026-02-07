@@ -1,0 +1,30 @@
+<div class="login-page">
+  <div class="login-card">
+
+    <h2 class="title">Iniciar sesión</h2>
+    <p class="subtitle">Accede a tu cuenta de estudiante</p>
+
+    <div class="form-group">
+      <label>Correo</label>
+      <input
+        type="email"
+        placeholder="correo@ejemplo.com"
+        [(ngModel)]="email" />
+    </div>
+
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input
+        type="password"
+        placeholder="••••••••"
+        [(ngModel)]="password" />
+    </div>
+
+    <button class="btn-login" (click)="login()">
+      Ingresar
+    </button>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+
+  </div>
+</div>

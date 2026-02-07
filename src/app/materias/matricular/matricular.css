@@ -1,0 +1,28 @@
+.content {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.materia {
+  border-left: 6px solid transparent;
+}
+
+.matriculada {
+  border-left-color: var(--success);
+  background-color: #f3fff6;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.error {
+  color: var(--danger);
+}

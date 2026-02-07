@@ -24,6 +24,13 @@ export class AuthService {
     return localStorage.getItem('nombre');
   }
 
+  register(nombre: string, email: string, password: string) {
+    return this.http.post<any>(
+      `${this.api}/auth/registrar`,
+      { nombre, email, password }
+    );
+  }
+
   logout() {
     localStorage.clear();
   }

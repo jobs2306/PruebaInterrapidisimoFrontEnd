@@ -18,5 +18,12 @@ export const routes: Routes = [
         .then(m => m.MisMateriasComponent),
     canActivate: [authGuard]
   },
+  {
+  path: 'register',
+  loadComponent: () =>
+    import('./auth/register/register')
+      .then(m => m.RegisterComponent)
+  },
+
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

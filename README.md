@@ -10,12 +10,13 @@ La aplicación permite a estudiantes **autenticarse**, **consultar materias disp
 
 El sistema simula un módulo académico donde un estudiante autenticado puede:
 
+- Crear su cuenta
 - Iniciar sesión mediante credenciales
 - Visualizar el listado de materias disponibles
 - Matricular materias
 - Cancelar inscripciones
 - Consultar sus materias inscritas
-- Ver los compañeros inscritos en cada materia
+- Ver los compañeros inscritos en cada materia que tenga inscrita
 - Recibir notificaciones visuales (toasts) de éxito o error
 - Ser redirigido automáticamente al login cuando la sesión expira
 

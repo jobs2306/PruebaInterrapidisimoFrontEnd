@@ -29,5 +29,4 @@ export class MateriasService {
   obtenerMisMaterias() {
     return this.http.get<any>(`${this.api}/Materia/mis-materias`);
   }
-
 }

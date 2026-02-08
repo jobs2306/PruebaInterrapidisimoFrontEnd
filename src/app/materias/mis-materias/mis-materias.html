@@ -9,28 +9,35 @@
   <div class="grid" *ngIf="!cargando && materias.length > 0">
 
     <div class="card materia" *ngFor="let m of materias">
-      <h3>{{ m.nombre }}</h3>
-      <p>Profesor: {{ m.profesor }}</p>
 
-      <div class="companeros">
-        <strong>Compañeros:</strong>
+      <!-- CONTENIDO FLEXIBLE -->
+      <div class="materia-contenido">
+        <h3>{{ m.nombre }}</h3>
+        <p>Profesor: {{ m.profesor }}</p>
+        <p>Créditos: {{ m.creditos }}</p>
 
-        <ul *ngIf="m.companeros?.length > 0; else sinCompaneros">
-          <li *ngFor="let c of m.companeros">
-            {{ c }}
-          </li>
-        </ul>
+        <div class="companeros">
+          <strong>Compañeros:</strong>
 
-        <ng-template #sinCompaneros>
-          <p class="muted">Sin compañeros aún</p>
-        </ng-template>
+          <ul *ngIf="m.companeros?.length > 0; else sinCompaneros">
+            <li *ngFor="let c of m.companeros">
+              {{ c }}
+            </li>
+          </ul>
+
+          <ng-template #sinCompaneros>
+            <p class="muted">Sin compañeros aún</p>
+          </ng-template>
+        </div>
       </div>
 
+      <!-- BOTÓN FIJO ABAJO -->
       <button
-        class="btn-danger"
+        class="btn-danger btn-cancelar"
         (click)="confirmarCancelar(m)">
         Cancelar inscripción
       </button>
+
     </div>
 
   </div>

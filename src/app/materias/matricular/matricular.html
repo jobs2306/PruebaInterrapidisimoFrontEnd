@@ -14,22 +14,28 @@
 
       <h3>{{ m.nombre }}</h3>
       <p>Profesor: {{ m.profesor }}</p>
+      <p>Creditos: {{ m.creditos }}</p>
 
       <div class="acciones">
+
+        <!-- Mostrar SOLO si NO está matriculada -->
         <button
+          *ngIf="!m.matriculada"
           class="btn-primary"
-          (click)="confirmarMatricular(m)"
-          [disabled]="m.matriculada">
+          (click)="confirmarMatricular(m)">
           Matricular
         </button>
 
+        <!-- Mostrar SOLO si está matriculada -->
         <button
+          *ngIf="m.matriculada"
           class="btn-danger"
-          (click)="confirmarCancelar(m)"
-          [disabled]="!m.matriculada">
+          (click)="confirmarCancelar(m)">
           Cancelar
         </button>
+
       </div>
+
     </div>
   </div>
 </div>

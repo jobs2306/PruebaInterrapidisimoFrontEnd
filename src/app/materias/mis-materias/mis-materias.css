@@ -8,10 +8,19 @@
   gap: 16px;
 }
 
+/* CARD COMO FLEX */
 .materia {
   border-left: 6px solid var(--primary);
+  display: flex;
+  flex-direction: column;
 }
 
+/* CONTENIDO QUE CRECE */
+.materia-contenido {
+  flex: 1;
+}
+
+/* COMPAÑEROS */
 .companeros {
   margin: 10px 0;
 }
@@ -23,6 +32,11 @@
 .muted {
   color: var(--gray);
   font-size: 0.9em;
+}
+
+/* BOTÓN SIEMPRE ABAJO */
+.btn-cancelar {
+  margin-top: auto;
 }
 
 .error {

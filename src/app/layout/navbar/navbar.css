@@ -1,20 +1,22 @@
 .navbar {
-  height: 64px;
   background-color: var(--dark);
   color: white;
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 12px 24px;
   justify-content: space-between;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  flex-wrap: wrap; /* 🔑 CLAVE */
 }
 
+/* IZQUIERDA */
 .navbar-left .logo {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--primary);
 }
 
+/* CENTRO */
 .navbar-center {
   display: flex;
   gap: 24px;
@@ -25,11 +27,6 @@
   text-decoration: none;
   font-weight: 500;
   padding-bottom: 4px;
-  transition: all 0.2s ease;
-}
-
-.navbar-center a:hover {
-  color: white;
 }
 
 .navbar-center a.active {
@@ -37,14 +34,15 @@
   border-bottom: 2px solid var(--primary);
 }
 
+/* DERECHA */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .user {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #eee;
 }
 
@@ -56,9 +54,45 @@
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
-.btn-logout:hover {
-  background-color: #e65f00;
+/* ───────────── MOBILE ───────────── */
+@media (max-width: 767px) {
+
+  .navbar {
+    padding: 12px 16px;
+    row-gap: 8px;
+  }
+
+  /* LOGO ARRIBA IZQUIERDA */
+  .navbar-left {
+    order: 1;
+    width: auto;
+  }
+
+  /* BOTÓN SALIR ARRIBA DERECHA */
+  .navbar-right {
+    order: 2;
+    width: auto;
+    margin-left: auto;
+  }
+
+  /* MENÚ ABAJO, OCUPA TODA LA FILA */
+  .navbar-center {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* OCULTAR NOMBRE EN MOBILE */
+  .user {
+    display: none;
+  }
+
+  .btn-logout {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
 }
+

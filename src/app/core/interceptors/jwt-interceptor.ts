@@ -26,7 +26,10 @@ export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
         // Sesión inválida o expirada
         localStorage.clear();
 
-        toast.error('Sesión expirada. Inicia sesión nuevamente');
+        const mensaje = err?.error?.errores?.[0] ??
+        'Sesión expirada. Inicia sesión nuevamente';
+
+        toast.error(mensaje);
 
         router.navigate(['/login']);
       }

@@ -18,6 +18,7 @@ import { AuthService } from '../auth';
 export class LoginComponent {
   email = '';
   password = '';
+  showPassword = false;
   error = '';
 
   constructor(
@@ -31,5 +32,9 @@ export class LoginComponent {
         next: () => this.router.navigate(['/matricular']),
         error: err => this.error = err
       });
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 }

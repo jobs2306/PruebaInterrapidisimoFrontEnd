@@ -57,6 +57,30 @@
   box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.2);
 }
 
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 42px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
 .btn-login {
   width: 100%;
   margin-top: 12px;

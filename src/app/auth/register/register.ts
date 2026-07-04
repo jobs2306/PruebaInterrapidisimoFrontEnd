@@ -16,6 +16,7 @@ export class RegisterComponent {
   nombre = '';
   email = '';
   password = '';
+  showPassword = false;
 
   constructor(
     private auth: AuthService,
@@ -43,5 +44,9 @@ export class RegisterComponent {
           this.toast.error(msg);
         }
       });
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 }
